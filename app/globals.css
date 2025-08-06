@@ -1,0 +1,163 @@
+/* app/globals.css - Global styles for The Current by She Is AI */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root CSS Variables - She Is AI Brand Colors */
+:root {
+  --primary: #0F0F0F;
+  --accent1: #FF2E93;
+  --accent2: #00C2FF;
+  --accent3: #00FF8A;
+  --accent4: #FF7849;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--primary);
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide Scrollbars (Clean Mobile Experience) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glass Effect Utility */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Border Utility */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 46, 147, 0.1), rgba(0, 194, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Shadow Utility */
+.enhanced-shadow {
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(255, 46, 147, 0.1);
+}
+
+/* Text Glow Utility */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover Scale Animation */
+.hover-scale {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(255, 46, 147, 0.2);
+}
+
+/* Progress Bar Gradient */
+.progress-bar {
+  background: linear-gradient(90deg, #FF2E93 0%, #00C2FF 100%);
+}
+
+/* Button Gradients */
+.signin-btn, .complete-btn {
+  background: linear-gradient(135deg, #FF2E93 0%, #00C2FF 100%);
+}
+
+/* Pulse Glow Animation */
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from { 
+    box-shadow: 0 0 20px rgba(255, 46, 147, 0.3); 
+  }
+  to { 
+    box-shadow: 0 0 40px rgba(255, 46, 147, 0.6), 0 0 60px rgba(0, 194, 255, 0.3); 
+  }
+}
+
+/* Mobile-Specific Optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Better touch targets on mobile */
+  button, a, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Focus Styles for Accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent1);
+  outline-offset: 2px;
+}
+
+/* Link Styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Selection Colors */
+::selection {
+  background-color: var(--accent1);
+  color: white;
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* PWA-Specific Styles */
+@media (display-mode: standalone) {
+  body {
+    /* Styles when app is installed as PWA */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
