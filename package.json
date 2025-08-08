@@ -17,12 +17,17 @@
     "postcss": "^8.4.0",
     "openai": "^4.24.7",
     "rss-parser": "^3.13.0",
-    "@anthropic-ai/sdk": "^0.24.0"
+    "@anthropic-ai/sdk": "^0.24.0",
+    "lucide-react": "^0.263.1",
+    "sonner": "^1.4.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@ducanh2912/next-pwa": "^10.2.8"
+    "@types/react-dom": "^18"
   }
 }
